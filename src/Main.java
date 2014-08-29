@@ -9,23 +9,28 @@ public class Main {
 		scan = new Scanner(System.in);
 	}
 	
-	public void askName(){
-		System.out.println("Hello! What's your name?");
-		String name;
-		
-		StringBuffer sB = new StringBuffer();
+	public void start(){
 		
 		try{
-			name = scan.nextLine();
-			sB.append(name).reverse();
-			System.out.println("Hello " + sB.toString());
+			System.out.println("TYPE BEGIN to start or EXIT to quit");
+			String answ = scan.nextLine();
+			
+			if(answ.equalsIgnoreCase("begin")){
+				begin();
+			}
+			else{
+				System.exit(0);
+			}
 		} catch(Exception e){
-			askName();
+			start();
 		}
 	}
 	
+	public void begin(){
+		
+	}
 	public static void main(String... args){
 		Main main = new Main();
-		main.askName();
+		main.start();
 	}
 }
